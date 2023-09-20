@@ -1,12 +1,12 @@
 import React from 'react'
 import './Task.css'
 
-const Task = (id,title,discription,priority)
+const Task = (id,title,description,priority)
 return (
-    <div>Task
+    <div>
         <h1 className='task-title'>{title}</h1>
 
-        <p className='task-discription'>{discription}</p>
+        <p className='task-description'>{description}</p>
 
         <span className='task-priority'>{priority}</span>
     </div>
