@@ -1,17 +1,22 @@
-.task-container{
+.task-container {
     max-width: 300px;
+    min-width: 300px;
     margin: 10px;
     padding: 5px;
     border-radius: 10px;
+    border: 1px solid wheat;
 
 }
-.task-title{
+
+.task-title {
     margin: 2px;
 }
-.task-discription{
+
+.task-discription {
     margin: 5px;
 }
-.task-priority{
+
+.task-priority {
     position: absolute;
     right: 0;
     top: 0;

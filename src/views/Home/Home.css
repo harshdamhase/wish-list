@@ -1,0 +1,26 @@
+.container{
+    /* background-color: rgb(254, 41, 84); */
+    padding: 10px;
+    margin: 0;
+    min-width: 100vh;
+}
+.app-title
+{
+    text-align: center;
+    background-color: crimson;
+    width: 200px;
+    padding: 10px 50px;
+    display: block;
+    margin: 10px auto;
+    border-radius: 20px;
+    color: aliceblue;
+}
+body {
+    background-color: #f6acb1;
+  }
+  
+  .todo-flex-container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
