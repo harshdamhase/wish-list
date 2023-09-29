@@ -8,15 +8,21 @@
 {
     text-align: center;
     background-color: crimson;
-    width: 200px;
-    padding: 10px 50px;
+    /* background-color: #4d004d; */
+    width: 400px;
     display: block;
-    margin: 10px auto;
-    border-radius: 20px;
-    color: aliceblue;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+    font-size: 30px;
+    box-shadow: 0 2px 4px #00000033;
+    font-family: Tahoma;
+    flex-wrap: wrap;
 }
 body {
-    background-color: #f6acb1;
+    background-color: #fac8cc;
   }
   
   .todo-flex-container{
@@ -24,3 +30,26 @@ body {
     justify-content: space-evenly;
     flex-wrap: wrap;
   }
+  .text-center {
+    text-align: center;
+    font-family: Tahoma;
+
+}
+.text-input {
+  display: block;
+  width: 300px;
+  font-size: 18px;
+  border: 1px solid #fff;
+  padding: 10px;
+  margin: 30px 15px;
+
+}
+.add-task{
+  background-color: #fa779f; 
+  border: 1px solid #f190f1;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 30px 15px;
+  box-shadow: grey 0px 1px 3px 1px;
+
+}
