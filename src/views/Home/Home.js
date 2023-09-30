@@ -33,8 +33,19 @@ const Home = () => {
         }
         setTaskList([...taskList, obj])
     }
+    const removeTaskToList = (obj) => {
 
-
+        const index = taskList.indexOf(obj);
+    
+        const tempArray = taskList;
+        tempArray.splice(index, 1);
+    
+        setTaskList([...tempArray]);
+    
+     
+      };
+     
+    
     return (
         <div className='container'>
             <h1 className='app-title'>Wishlist💫</h1>
@@ -51,7 +62,10 @@ const Home = () => {
                                     id={id}
                                     title={title}
                                     description={description}
-                                    priority={priority} />
+                                    priority={priority} 
+                                    key={index}
+                                    removeTaskToList={removeTaskToList}
+                                    />
                             );
                         })}
                 </div>
@@ -72,8 +86,6 @@ const Home = () => {
                                 className='task-input'
 
                             />
-                            <br />
-                            <br />
 
 
                             <input type="text"
@@ -84,9 +96,7 @@ const Home = () => {
                                 placeholder='Enter Description'
                                 className='task-input'
                             />
-                            <br />
-                            <br />
-
+                           
 
                             <input type="text"
                                 value={priority}
@@ -97,8 +107,7 @@ const Home = () => {
                                 className='task-input'
 
                             />
-                            <br />
-                            <br />
+                           
 
                             <button className='add-task'
                                 type='button'
