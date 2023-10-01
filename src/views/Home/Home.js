@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Home.css'
 import Task from "./../../Component/Task/Task";
 
@@ -22,6 +22,16 @@ const Home = () => {
     const [description, setDescription] = useState('');
     const [priority, setPriority] = useState('');
 
+    useEffect(()=>{
+        const list = JSON.parse(localStorage.getItem('wishlist'));
+ setTaskList(list)
+    },[])
+    
+
+    const saveListToLocalStorage = () =>{
+        localStorage.setItem("wishlist", JSON.stringify(taskList))
+    }
+
     const addTaskToList = () => {
 
         const randomId = Math.floor(Math.random() * 100)
@@ -31,21 +41,38 @@ const Home = () => {
             description: description,
             priority: priority
         }
-        setTaskList([...taskList, obj])
-    }
-    const removeTaskToList = (obj) => {
 
-        const index = taskList.indexOf(obj);
+        const newTaskList = [...taskList, obj]
+        
+     setTaskList([...taskList, obj])
     
+    setTitle('');
+    setDescription('');
+    setPriority('');
+
+    saveListToLocalStorage(newTaskList);
+}
+
+
+    const removeTaskToList = (id) => {
+    let index;
+
+        taskList.forEach((task, i) =>{
+            if(task.id==id){
+                index = i
+            }
+        })
+
         const tempArray = taskList;
         tempArray.splice(index, 1);
-    
-        setTaskList([...tempArray]);
-    
-     
+
+        setTaskList([...tempArray]); 
+        
+        saveListToLocalStorage(tempArray)
       };
      
     
+
     return (
         <div className='container'>
             <h1 className='app-title'>Wishlist💫</h1>
