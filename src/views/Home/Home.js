@@ -24,7 +24,8 @@ const Home = () => {
 
     useEffect(()=>{
         const list = JSON.parse(localStorage.getItem('wishlist'));
- setTaskList(list)
+        if(list && list.length>0)
+         setTaskList(list)
     },[])
     
 
