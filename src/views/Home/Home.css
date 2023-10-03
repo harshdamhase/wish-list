@@ -47,21 +47,25 @@ body {
   margin: 30px 15px;
   box-shadow: grey 0px 1px 3px 1px;
 }
-.add-task{
+.btn-add-task{
   background-color: #f00e33;
   color: #fff;
   padding: 10px 40px;
   border: none;
   border-radius: 10px;
   box-shadow: 0 2px 10px 0 #00000033;
-  display: block;
-  margin: 20px auto;
+  margin: 20px;
   cursor: pointer;
   font-size: 14px;
   font-family: bold;
   font-family: Tahoma;
+width: 120px;
 }
 .tasks-container{
   height: 300px;
   overflow-y: scroll;
+}
+.btn-conatainer{
+  display: flex;
+  justify-content: space-around;
 }

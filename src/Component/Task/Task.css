@@ -41,4 +41,12 @@
     position: absolute;
     bottom: 0;
     right: 0;
+    cursor: pointer;
+
+}
+.task-edit-icon{
+    position: absolute;
+    bottom: 0px;
+    right: 35px;
+    cursor: pointer;
 }
