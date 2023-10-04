@@ -19,7 +19,7 @@ const Home = () => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [priority, setPriority] = useState('');
-    const [isEdit, setIsEdit] = useState(true)
+    const [isEdit, setIsEdit] = useState(false)
 
     useEffect(() => {
         const list = JSON.parse(localStorage.getItem("wishlist"));
@@ -123,31 +123,30 @@ const Home = () => {
     setPriority(currentEditTask.priority);
     }
 
-    const updateTask = () => {
-
-        if(checkRequiredFields()=== false){
-          return;
-        };
+    const updateTask = (task) => {
     
-        const indexToUpdate = findTaskIndexById(id);
+        if (checkRequiredFields() === false) {
+          return;
+        }
+    
+        const indexToUpdate = findTaskIndexById(id); 
     
         const tempArray = taskList;
         tempArray[indexToUpdate] = {
-        id: id,
-      title: title,
-      description: description,
-      priority: priority,
-    };
-
-    setTaskList([...tempArray]);
-    saveListToLocalStorage(tempArray);
-
-    setId(0);
-    clearInputFields();
-    setIsEdit(false);
-
-    showToast('Task updated successfully!', 'info',3000);
-
+          id: id,
+          title: title,
+          description: description,
+          priority: priority,
+        };
+    
+        setTaskList([...tempArray]);
+    
+        saveListToLocalStorage(tempArray);
+    
+        clearInputFields();
+        setIsEdit(false);
+    
+        showToast("Task Updated successfully ", "update", 3000);
   };
 
 
@@ -179,7 +178,7 @@ const Home = () => {
 
                     <div>
                         <h2 className='text-center'>
-                            {isEdit ? `Update Task ${id} ` : 'Add Task'}
+                        {isEdit ? `Update Task ${id}` : "Add Task"}
                         </h2>
                         <div className='add-task-form-container'>
                             <form>
@@ -214,16 +213,16 @@ const Home = () => {
 
 
 <div className="btn-container">
-              <button
-                    type="button"
-                    className="btn-add-task"
-                    onClick={()=>{
-                      isEdit ? updateTask() : addTaskToList()
-                    }}>
-                    {isEdit ? 'Update' : 'Add'}
-                  </button>
+                <button
+                  type="button"
+                  className="btn-add-task"
+                  onClick={() => {
+                    isEdit ? updateTask() : addTaskToList();
+                  }}
+                >
+                  {isEdit ? "Update" : "Add"}
+                </button>
               </div>
-
 
 
                             </form>
