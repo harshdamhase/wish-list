@@ -10,15 +10,6 @@ const Task = ({ id, title, description, priority, removeTaskToList,setTaskEditab
 
             <span className='task-priority'>{priority}</span>
 
-            <span className='task-delete-icon'
-                onClick={() => {
-                    removeTaskToList(id);
-                }}
-
-            >
-
-                🗑️</span>
-
             <span className='task-edit-icon'
                 onClick={() => {
                     setTaskEditable(id);
@@ -27,6 +18,16 @@ const Task = ({ id, title, description, priority, removeTaskToList,setTaskEditab
             >
                 📝
             </span>
+            
+            <span className='task-delete-icon'
+                onClick={() => {
+                    removeTaskToList(id);
+                }}
+
+            >
+ 🗑️</span>
+
+         
         </div>
     )
 }
